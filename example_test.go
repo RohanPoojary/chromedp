@@ -13,13 +13,13 @@ import (
 	"strings"
 	"time"
 
+	"github.com/RohanPoojary/chromedp"
+	"github.com/RohanPoojary/chromedp/device"
 	"github.com/chromedp/cdproto/cdp"
 	"github.com/chromedp/cdproto/dom"
 	"github.com/chromedp/cdproto/page"
 	"github.com/chromedp/cdproto/runtime"
 	"github.com/chromedp/cdproto/target"
-	"github.com/chromedp/chromedp"
-	"github.com/chromedp/chromedp/device"
 )
 
 func writeHTML(content string) http.Handler {
@@ -414,7 +414,7 @@ func ExamplePrintToPDF() {
 
 	var buf []byte
 	if err := chromedp.Run(ctx,
-		chromedp.Navigate(`https://pkg.go.dev/github.com/chromedp/chromedp`),
+		chromedp.Navigate(`https://pkg.go.dev/github.com/RohanPoojary/chromedp`),
 		chromedp.ActionFunc(func(ctx context.Context) error {
 			var err error
 			buf, _, err = page.PrintToPDF().
